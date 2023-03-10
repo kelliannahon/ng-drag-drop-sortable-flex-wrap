@@ -1,0 +1,133 @@
+
+// $base-size: 200px;
+// $base-spacing: 10px;
+// $base-border: 3px;
+
+
+@mixin styling($base-size, $base-spacing, $base-border) {
+  // your SCSS here, e.g.
+    
+  .container3 {
+    width: 3*$base-size + 4 * $base-spacing + 2* $base-border;
+  }
+  .container4 {
+    width: 4*$base-size + 5 * $base-spacing + 2* $base-border;
+  }
+  .container5 {
+    width: 5*$base-size + 6 * $base-spacing + 2* $base-border;
+  }
+  .container6 {
+    width: 6*$base-size + 7 * $base-spacing + 2* $base-border;
+  }
+
+  .size1 {
+    width: $base-size;
+  }
+  
+  .size2 {
+    width: 2*$base-size + $base-spacing;
+  }
+  
+  .size3 {
+    width: 3*$base-size + 2*$base-spacing;
+  }
+
+  .example-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  
+  .example-list li {
+    display: table-cell;
+    padding: 4px;
+  }
+  
+  .example-container {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 3px black;
+    padding-top: $base-spacing;
+    padding-left: $base-spacing;
+  }
+  
+  
+  .example-box {
+    height: $base-size;
+    border: solid 1px #ccc;
+    font-size: 30pt;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.87);
+    cursor: move;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    border-radius: 4px;
+    position: relative;
+    z-index: 1;
+    transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+      0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+  
+  
+  
+  .example-box:active {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+      0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    opacity: 0.6;
+  }
+  
+  .cdk-drop-list {
+    display: flex;
+    padding-right: $base-spacing;
+    padding-bottom: $base-spacing;
+  }
+  
+  .cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+      0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+  
+  .cdk-drag-placeholder {
+    opacity: 0.3;
+  }
+  
+  .cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  
+  button {
+    margin-right: 4px;
+  }
+
+  #x {
+    width: $base-spacing * 3;
+    height: $base-spacing * 2;
+    position: absolute;
+    top: 4px;
+    right: 0px;
+}
+
+}
+
+@media screen and (min-width: 702px) {
+  @include styling($base-size: 200px, $base-spacing: 10px, $base-border: 3px);
+}
+
+@media screen and (max-width: 702px) {
+  @include styling($base-size: 150px, $base-spacing: 8px, $base-border: 3px);
+}
+@media screen and (max-width: 520px) {
+  @include styling($base-size: 100px,$base-spacing: 5px, $base-border: 3px);
+}
+
+@media screen and (max-width: 370px) {
+  @include styling($base-size: 50px,$base-spacing: 5px, $base-border: 3px);
+}
+
+
